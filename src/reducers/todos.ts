@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { useLocation } from 'react-router-dom';
-import { ACTIVE_TODO } from '../actions/RouteAction';
+import * as ActionTypes from '../constants/ActionTypes';
 import ActionModel from '../model/interface/ActionModel';
 import PageInfo from '../model/interface/PageInfo';
 import { routes } from '../constants/DataRoute';
@@ -16,9 +16,10 @@ function todo(state = [], action:ActionModel): any[] {
     return state;
 }
 
-function todos(state = [], action:ActionModel): any[] {
+let initialState: [];
+function todos(state = initialState, action:ActionModel): any[] {
     switch (action.type) {
-    case ACTIVE_TODO: {
+    case ActionTypes.ACTIVE_TODO: {
         todo(state, action);
         return [...state];
     }
@@ -28,7 +29,4 @@ function todos(state = [], action:ActionModel): any[] {
     }
 }
 
-const todoRoute = combineReducers({
-    todos,
-});
-export default todoRoute;
+export default todos;

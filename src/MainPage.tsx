@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import todoRoute from '../reducers/RouteReducer';
-import Main from '../components/Main';
-import App from '../App';
+import Main from './containers/Main';
+import App from './App';
+import configStoreMain from './store/configStoreMain';
 
-const store = createStore(todoRoute);
+const store = configStoreMain();
 
 class MainPage extends Component {
     render() {

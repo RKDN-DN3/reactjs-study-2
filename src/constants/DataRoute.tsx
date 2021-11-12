@@ -1,6 +1,6 @@
 import App from '../App';
 
-export const dataR = '1231';
+export const dataR = '';
 export const routes = [
     {
         id: 1,

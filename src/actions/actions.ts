@@ -1,7 +1,5 @@
 import PageInfo from '../model/interface/PageInfo';
-
-export const ADD_TODO = 'ADD_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
+import * as ActionTypes from '../constants/ActionTypes';
 
 let nextId:number = 0;
 
@@ -15,7 +13,7 @@ export function addTodo(obj:any) {
         isActive: false,
     };
     return {
-        type: ADD_TODO,
+        type: ActionTypes.ADD_TODO,
         id: nextId,
         obj,
     };
@@ -23,7 +21,7 @@ export function addTodo(obj:any) {
 
 export function delTodo(id:number, obj:any) {
     return {
-        type: ADD_TODO,
+        type: ActionTypes.ADD_TODO,
         id,
         obj,
     };
